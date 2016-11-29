@@ -5,12 +5,18 @@ const Schema = mongoose.Schema;
 // ----------------------
 // DATA TABLE
 // ----------------------
-const resourceSchema = new Schema({
+const productSchema = new Schema({
   // example of optional fields
   // title:        { type: String, required: true },
   // description:  { type: String },
   // upVotes:      { number: String, default: 0 },
-  createdAt:    { type: Date, default: Date.now }
+
+     names:       {type:String, required:true},
+     description: {type:String},
+     imgLink:     {type:String},
+     price:       {type:Number,required:true },
+     warranty:    {type:Boolean, default: false},
+
 
 })
 
@@ -20,5 +26,5 @@ module.exports = {
    /*
     * NOTE: you would ideally change the export-value and the model-name
     */
-  Resource: createModel('Resource', resourceSchema)
+  Product: createModel('Product', productSchema)
 }
